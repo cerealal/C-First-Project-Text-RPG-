@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
-#include "golbalv.h"
+#include "globalvars.h"
+#include "functions.h"
 using namespace std;
 
 //main menu function
-int main_menu()
+int main_menu(int b)
 {
+
     while (b == 0)
     {
         //prompt
@@ -13,13 +15,12 @@ int main_menu()
         cin >> a;
         if (a == "Yes")
         {
-            //true state- sends to for loop
+            //true state
             b = 1;
-            break;
         }
         else if (a == "No")
         {
-            //neutral state- sends to beggining
+            //neutral state
             b = 0;
         }
         else if (a == "-terminate")
@@ -27,19 +28,33 @@ int main_menu()
             //terminates program
             terminate();
         }
+        else if (a == "-developertest")
+        {
+            /*
+            if (condition)
+           {
+                 code 
+           }
+            f (condition )
+            {
+                code 
+           }
+           if (condition)
+           {
+                code
+            }
+            */
+        }
         else
         {
             //neutral state- sends to beggining
+            cout << "Sorry! Invalid Input." << endl;
             b = 0;
         }
-    }
-
-    //Main Menu w/ basic option commands
-    while (b == 1)
-    {
-        cout << "Sorry but the game doesn't exist right now! Returning to main menu." << endl;
-        while (b == 1)
+        //Game Start-Up
+        if (b == 1)
         {
+            cout << "Sorry but the game doesn't exist right now!" << endl;
             cout << "Would you like to end the game? [Yes or No]" << endl;
             cin >> a;
             if (a == "Yes")
@@ -47,11 +62,11 @@ int main_menu()
                 cout << "Okay" << endl;
                 terminate();
             }
+            //fix this if statement giving an error
             else if (a == "No")
             {
-                
-                b = 1;
-                break;
+                cout << "Okay" << endl;
+                b = 0;
             }
             if (a == "-terminate")
             {
@@ -59,7 +74,6 @@ int main_menu()
                 terminate();
             }
         }
-        b = 0;
-        break;
     }
+    return 0;
 }

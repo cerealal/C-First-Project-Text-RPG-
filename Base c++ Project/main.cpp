@@ -7,5 +7,6 @@ using namespace std;
 int main()
 {
     //main menu
-    main_menu();
+    main_menu(0);
+    return 0;
 }
