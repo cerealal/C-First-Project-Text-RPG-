@@ -13,24 +13,26 @@ int main_menu(int b)
         //prompt
         cout << "Would you like to start the game? [Yes or No]" << endl;
         cin >> a;
-        if (a == "Yes")
+        if (b == 0)
         {
-            //true state
-            b = 1;
-        }
-        else if (a == "No")
-        {
-            //neutral state
-            b = 0;
-        }
-        else if (a == "-terminate")
-        {
-            //terminates program
-            terminate();
-        }
-        else if (a == "-developertest")
-        {
-            /*
+            if (a == "Yes")
+            {
+                //true state
+                b = 1;
+            }
+            else if (a == "No")
+            {
+                //neutral state
+                b = 0;
+            }
+            else if (a == "-terminate")
+            {
+                //terminates program
+                terminate();
+            }
+            else if (a == "-developertest")
+            {
+                /*
             if (condition)
            {
                  code 
@@ -44,12 +46,13 @@ int main_menu(int b)
                 code
             }
             */
-        }
-        else
-        {
-            //neutral state- sends to beggining
-            cout << "Sorry! Invalid Input." << endl;
-            b = 0;
+            }
+            else
+            {
+                //neutral state- sends to beggining
+                cout << "Sorry! Invalid Input." << endl;
+                b = 0;
+            }
         }
         //Game Start-Up
         if (b == 1)
@@ -62,8 +65,7 @@ int main_menu(int b)
                 cout << "Okay" << endl;
                 terminate();
             }
-            //fix this if statement giving an error
-            else if (a == "No")
+            if (a == "No")
             {
                 cout << "Okay" << endl;
                 b = 0;
